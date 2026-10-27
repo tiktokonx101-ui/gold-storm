@@ -1,83 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GOLD STORM</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0e;
-      color: white;
-    }
-    header {
-      padding: 24px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
-    .logo {
-      color: #d9b65d;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-    }
-    .hero {
-      min-height: 75vh;
-      padding: 100px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: radial-gradient(ellipse at center, #292313, #0b0b0e 70%);
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(42px, 9vw, 85px);
-      margin: 0 0 20px;
-      color: #e2c16d;
-      letter-spacing: 5px;
-    }
-    p {
-      color: #c5c5c5;
-      line-height: 1.8;
-      font-size: 18px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 25px auto 0;
-      padding: 15px 30px;
-      border: 1px solid #d9b65d;
-      border-radius: 5px;
-      color: #e2c16d;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #888;
-      border-top: 1px solid #292929;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0e">
+<title>GOLD STORM | عالم التداول</title>
+<meta name="description" content="قارن بين وسطاء التداول واكتشف خيارات التسجيل ومعلومات الحساب.">
+<style>
+:root{--gold:#e9bd58;--bg:#090a0e;--panel:#14151b;--muted:#a5a5b2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,Tahoma,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#0b0b0ef2;border-bottom:1px solid #302a1b;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:1px}
+nav{display:flex;gap:18px;font-size:14px}
+nav a:hover,.gold{color:var(--gold)}
+.hero{text-align:center;padding:75px 20px 60px;background:radial-gradient(ellipse at top,#3b2c102e,transparent 65%)}
+.eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(32px,7vw,58px);line-height:1.25;margin:18px 0}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto 25px}
+.btn{display:inline-block;background:var(--gold);color:#17120a;padding:11px 22px;border-radius:9px;font-weight:bold;border:0;cursor:pointer}
+.btn.secondary{background:transparent;color:var(--gold);border:1px solid #77602c}
+section{padding:38px 5%;max-width:1200px;margin:auto}
+.section-head{text-align:center;margin-bottom:25px}
+.section-head h2{margin-bottom:4px}
+.section-head p{color:var(--muted);margin-top:0}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+input,select{background:var(--panel);border:1px solid #393944;border-radius:9px;color:white;padding:12px;font-size:15px;min-width:0}
+input{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:17px}
+.card{background:linear-gradient(145deg,#191a21,#101116);border:1px solid #33313a;border-radius:16px;padding:22px;display:flex;flex-direction:column;align-items:flex-start}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.brand{font-size:22px;font-weight:900;color:var(--gold);margin:8px 0}
+.tag{font-size:12px;border:1px solid #4a4028;border-radius:20px;padding:3px 10px;color:var(--gold)}
+.card p{color:var(--muted);font-size:14px}
+.card .btn{width:100%;text-align:center;margin-top:8px}
+.card .secondary{margin-top:9px}
+.note{background:#17150f;border:1px solid #5a4722;border-radius:12px;padding:16px;color:#e4d5b2;font-size:13px}
+.compare{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:470px;background:var(--panel);border-radius:12px;overflow:hidden}
+th,td{padding:13px;text-align:right;border-bottom:1px solid #333}
+th{color:var(--gold)}
+footer{text-align:center;border-top:1px solid #302a1b;padding:28px 15px;color:var(--muted);font-size:13px}
+.telegram{position:fixed;bottom:18px;left:18px;background:#229ed9;color:white;border-radius:30px;padding:11px 17px;font-weight:bold;box-shadow:0 4px 18px #0008}
+@media(max-width:520px){header{padding:12px 4%}nav{gap:10px;font-size:12px}.logo{font-size:18px}.hero{padding-top:55px}section{padding:30px 4%}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">GOLD STORM</div>
-    <nav><a href="#home">Home</a></nav>
-  </header>
-  <main class="hero" id="home">
-    <p>WELCOME TO</p>
-    <h1>GOLD STORM</h1>
-    <p>A new experience begins here.</p>
-    <a class="btn" href="#about">DISCOVER MORE</a>
-  </main>
-  <footer id="about">© 2026 GOLD STORM. All rights reserved.</footer>
+<header>
+  <a class="logo" href="#">GOLD STORM</a>
+  <nav>
+    <a href="#brokers">الوسطاء</a>
+    <a href="#compare">المقارنة</a>
+    <a href="#about">من نحن</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">YOUR TRADING JOURNEY</div>
+  <h1>اكتشف عالم التداول<br><span class="gold">مع GOLD STORM</span></h1>
+  <p>تعرّف على مجموعة من وسطاء التداول، واستعرض المعلومات الأساسية وقارن الخيارات قبل اتخاذ قرارك.</p>
+  <a class="btn" href="#brokers">اكتشف الوسطاء ←</a>
+</section>
+
+<section id="brokers">
+  <div class="section-head">
+    <h2>وسطاء التداول</h2>
+    <p>استعرض الوسطاء وتحقق من شروطهم من مواقعهم الرسمية.</p>
+  </div>
+  <div class="tools">
+    <input id="search" type="search" placeholder="ابحث عن وسيط..." aria-label="ابحث عن وسيط">
+    <select id="sort" aria-label="ترتيب الوسطاء">
+      <option value="default">الترتيب الافتراضي</option>
+      <option value="az">الاسم: أ إلى ي</option>
+    </select>
+  </div>
+  <div class="grid" id="cards">
+    <article class="card" data-name="PU PRIME">
+      <span class="tag">وسيط تداول</span>
+      <div class="brand">PU PRIME</div>
+      <p>راجع أنواع الحسابات، التكاليف، التراخيص وشروط الإيداع والسحب من المصدر الرسمي.</p>
+      <a class="btn" href="https://www.google.com/search?q=PU+Prime+official+website" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a>
+      <a class="btn secondary" href="#compare">قارن الوسيط</a>
+    </article>
+    <article class="card" data-name="VANTAGE">
+      <span class="tag">وسيط تداول</span>
+      <div class="brand">VANTAGE</div>
+      <p>تحقق من الجهة المنظمة التي ستتعامل معها ومن شروط الحساب والرسوم.</p>
+      <a class="btn" href="https://www.google.com/search?q=Vantage+Markets+official+website" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a>
+      <a class="btn secondary" href="#compare">قارن الوسيط</a>
+    </article>
+    <article class="card" data-name="STARTRADER">
+      <span class="tag">وسيط تداول</span>
+      <div class="brand">STARTRADER</div>
+      <p>راجع التراخيص المتاحة في بلدك، وشروط التداول والسحب قبل التسجيل.</p>
+      <a class="btn" href="https://www.google.com/search?q=STARTRADER+official+website" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a>
+      <a class="btn secondary" href="#compare">قارن الوسيط</a>
+    </article>
+    <article class="card" data-name="NEEX">
+      <span class="tag">وسيط تداول</span>
+      <div class="brand">NEEX</div>
+      <p>اطّلع على المعلومات القانونية وتفاصيل الحساب والرسوم من الموقع الرسمي.</p>
+      <a class="btn" href="https://www.google.com/search?q=NEEX+Markets+official+website" target="_blank" rel="noopener noreferrer">الموقع الرسمي ↗</a>
+      <a class="btn secondary" href="#compare">قارن الوسيط</a>
+    </article>
+  </div>
+  <p class="note">تنبيه: هذه أسماء وسطاء وليست توصية استثمارية أو تأكيدًا على الترخيص. تحقق بصورة مستقلة من الجهة القانونية والترخيص وشروط الخدمة في بلدك.</p>
+</section>
+
+<section id="compare">
+  <div class="section-head">
+    <h2>مقارنة سريعة</h2>
+    <p>المعلومات التالية تحتاج إلى التحقق من المواقع الرسمية قبل اتخاذ أي قرار.</p>
+  </div>
+  <div class="compare">
+    <table>
+      <thead><tr><th>الوسيط</th><th>التراخيص</th><th>السبريد والرسوم</th><th>التسجيل</th></tr></thead>
+      <tbody>
+        <tr><td>PU PRIME</td><td>تحقق رسميًا</td><td>حسب نوع الحساب</td><td><a class="gold" href="#brokers">عرض الموقع ↗</a></td></tr>
+        <tr><td>VANTAGE</td><td>تحقق رسميًا</td><td>حسب نوع الحساب</td><td><a class="gold" href="#brokers">عرض الموقع ↗</a></td></tr>
+        <tr><td>STARTRADER</td><td>تحقق رسميًا</td><td>حسب نوع الحساب</td><td><a class="gold" href="#brokers">عرض الموقع ↗</a></td></tr>
+        <tr><td>NEEX</td><td>تحقق رسميًا</td><td>حسب نوع الحساب</td><td><a class="gold" href="#brokers">عرض الموقع ↗</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <h2>عن GOLD STORM</h2>
+    <p>مساحة لعرض معلومات الوسطاء ومساعدة الزوار على إجراء المقارنة والبحث.</p>
+  </div>
+  <div class="note">التداول بالرافعة المالية والعقود مقابل الفروقات ينطوي على مخاطر مرتفعة وقد يؤدي إلى خسارة رأس المال. المحتوى للتعريف فقط ولا يشكل نصيحة مالية أو ضمانًا للربح.</div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">GOLD STORM</div>
+  <p>المعلومات قابلة للتغيير؛ راجع الشروط الرسمية قبل التسجيل أو إيداع الأموال.</p>
+  <p>© <span id="year"></span> GOLD STORM</p>
+</footer>
+
+<a class="telegram" href="https://t.me/GOLD_Storm26" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+
+<script>
+const search=document.getElementById('search');
+const sort=document.getElementById('sort');
+const cards=document.getElementById('cards');
+function updateCards(){
+  const items=[...cards.querySelectorAll('.card')];
+  const term=search.value.trim().toLowerCase();
+  items.forEach(card=>{
+    card.hidden=!card.dataset.name.toLowerCase().includes(term);
+  });
+  if(sort.value==='az'){
+    items.sort((a,b)=>a.dataset.name.localeCompare(b.dataset.name));
+    items.forEach(card=>cards.appendChild(card));
+  }
+}
+search.addEventListener('input',updateCards);
+sort.addEventListener('change',updateCards);
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
